@@ -1,6 +1,6 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-class UnifiedApiConfig(BaseSettings):
+class AppConfig(BaseSettings):
     model_config = SettingsConfigDict(env_file='.env', env_file_encoding='utf-8', extra='ignore')
     HOST: str = "0.0.0.0"
     PORT: int = 8000
@@ -14,4 +14,4 @@ class UnifiedApiConfig(BaseSettings):
     DISCORD_GUILD_ID: int
     DISCORD_VOICE_CHANNEL_ID: int
 
-settings = UnifiedApiConfig()
+settings = AppConfig()
